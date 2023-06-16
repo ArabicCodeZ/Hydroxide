@@ -1,10 +1,10 @@
 local aux = {}
 
-local getGc = getgc
-local getInfo = debug.getinfo or getinfo
-local getUpvalue = debug.getupvalue or getupvalue or getupval
-local getConstants = debug.getconstants or getconstants or getconsts
-local isXClosure = is_synapse_function or issentinelclosure or is_protosmasher_closure or is_sirhurt_closure or istempleclosure or checkclosure
+local getGc = getgc or false
+local getInfo = debug.getinfo or getinfo or false
+local getUpvalue = debug.getupvalue or getupvalue or getupval or false
+local getConstants = debug.getconstants or getconstants or getconsts or false
+local isXClosure = is_synapse_function or issentinelclosure or is_protosmasher_closure or is_sirhurt_closure or istempleclosure or checkclosure or false
 local isLClosure = islclosure or is_l_closure or (iscclosure and function(f) return not iscclosure(f) end)
 
 assert(getGc and getInfo and getConstants and isXClosure, "Your exploit is not supported")
